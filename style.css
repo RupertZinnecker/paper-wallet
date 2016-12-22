@@ -1,0 +1,506 @@
+body{
+	color: #c6c6c6;
+	background: #717070;
+	
+}
+
+table {
+    border-collapse:separate;
+    border-spacing: 100px 100px;
+}
+
+#site{
+	position: relative;
+	left: 20px;
+	top: 20px;
+	background: #ffffff;
+	width: 911px;
+	height: 1500px;
+	color: #717070;
+	font-family: 'Verdana';
+	font-weight: bold;
+}
+
+#logo{
+	position: relative;
+	top: 20px;
+	left: 20px;	
+}
+
+#menue{
+	position: relative;
+	top: 60px;
+	left: 20px;	
+	
+}
+
+#mainText{
+	position: relative;
+	top: 70px;
+	left: 20px;
+}
+
+#processing{
+	position: relative;
+	top: 70px;
+	left: 20px;	
+}
+
+#designImage{
+	height: 650px;
+	width: 450px;
+}
+
+#printButton{
+	position: relative;
+	top: -570px;
+	left: 490px;
+}
+
+#currencyMeasure{
+	position: relative;
+	top: -585px;
+	left: 675px;
+}
+
+#input{
+	position: relative;
+	top:-645px;
+	left:490px;
+	width: 140px;
+}
+
+span{
+	border-style: solid;
+	border-color: grey;
+	position: absolute;
+	right: 918px;
+	width: 15px;
+	height: 15px;
+	line-height: 25px;
+	padding: 3px;
+	color: #FFF;
+	text-align: center;
+	background: #ffffff;
+}
+ 
+span:after{
+	/*content: "no"; /*if CSS are disbled span elements are not displayed*/
+}
+ 
+input[type="radio"]{
+	
+	position: absolute;
+	right: 918px;
+	margin: 0;
+	width: 20px;
+	height: 20px;
+	/*hide the radio button*/
+	filter:alpha(opacity=0);
+	-moz-opacity:0;
+	-khtml-opacity: 0;
+	opacity: 0;
+    cursor: pointer;
+	
+}
+ 
+input[type="radio"] + span{ /*the span element that immediately follow the radio button */
+	visibility: hidden; /*temporarily hide the "YES" label*/
+	background: #ff5046;
+	
+}
+ 
+input[type="radio"] + span:after{
+	/*content: "yes"; /*if CSS are disbled span elements are not displayed*/
+}
+ 
+ 
+input[type="radio"]:checked + span{
+	visibility: visible; /*show the "YES" label only if the radio button is checked*/
+}
+
+#warningMessage{
+	position: relative;
+	top: -575px;
+	left: 490px;
+}
+
+#area{
+	width: 330px;
+	height: 330px;
+	border-style: solid;
+	border-color: #717070;
+	position: relative;
+	top: -575px;
+	left: 490px;
+}
+
+#progressBar{
+	width: 330px;
+	height: 30px;
+	border-style: solid;
+	border-color: #717070;
+	position: relative;
+	top: -565px;
+	left: 490px;
+}
+
+#bar{
+	width: 0px;
+	height: 30px;
+	position: relative;
+	top: -598px;
+	left: 493px;
+	background-color: #ff5046;
+}
+
+#currency{
+	position: relative;
+	top: -650px;
+	left: 640px;
+}
+
+
+.print {
+	background-color:#717070;
+	/*-webkit-border-top-left-radius:0px;
+	-moz-border-radius-topleft:0px;
+	border-top-left-radius:0px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:0px;
+	-moz-border-radius-bottomright:0px;
+	border-bottom-right-radius:0px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0;
+	border:1px solid #eda933;
+	display:inline-block;*/
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:27px;
+	line-height:20px;
+	width:90px;
+	text-decoration:none;
+	text-align:center;
+	/*text-shadow:1px 1px 0px #cd8a15;*/
+}.print:hover {
+	background-color:#ff5046;
+}.print:active {
+	position:relative;
+	top:1px;
+}
+
+#amountInput{
+	maxlength: "7";
+	size: "7";	
+	width: 120px;
+	height:20px;
+	border-radius:0;
+}
+
+
+#btc{
+	
+}
+
+#printBacksite{
+	position: relative;
+	left: 20px;
+	top: 80px;
+}
+
+#currencies{
+	position: relative;
+	top: 90px;
+	left: -50px;
+	border-collapse:separate;
+    border-spacing: 100px 100px;
+}
+
+#gifAnimation{
+	position: relative;
+	top: 120px;
+	left: 25px;	
+}
+
+#animation{
+	height: 520px;
+	width: 350px;
+}
+
+#infoTextDiv{
+	position: relative;
+	top: -450px;
+	left: 347px;
+	margin-right: 50px;
+	width: 375px;
+	height: ;
+}
+
+#wallets{
+	position: relative;
+	top: 100px;
+	left: 20px;
+}
+
+#infoTextP{
+	text-align: justify;
+}
+
+#infoTextTeamDiv{
+	position: relative;
+	top: 100px;
+	left: 20px;
+	margin-right: 50px;
+	width: 735px;
+}
+
+#infoTextTeamP{
+	text-align: justify;
+}
+
+#printEnhanceQR{
+	position: relative;
+	left: 110px;
+	top: -110px;
+}
+
+#printBottom{
+	border-width: 5px;	
+	border-color: black;
+	border-style: solid;	
+	height: 442px;
+	width: 617px;
+}
+
+#printEnhanceBottom{
+	
+}
+#printTop{
+	height: 1135px;
+	width: 800px;
+}
+
+/**********************	
+*	Wallet Frontside	
+***********************/
+/*div*/
+#printBackgroundDiv{
+	position: relative;
+	left: 38.4mm;	
+}
+#printInfoDiv{
+	position: relative;
+	left: 195.8mm;
+	top: -407.5mm;
+}
+#printCurrencyDiv{
+	position: relative;
+	left: 254mm;
+	top: -370.4mm;
+}
+#printCurrencyLogoDiv{
+	position: relative;
+	left: 398.2mm;
+	top: -391.6mm;
+}
+#keyDiv{
+	position: relative;
+	left: 254mm;
+	top: -378.4mm;
+}
+#coinsDiv{
+	position: relative;
+	left: 254mm;
+	top: -378.4mm;
+}
+#qr-pubDiv{
+	position: relative;
+	left: 439.2mm;
+	top: -449.8mm;
+}
+/*p, img*/
+#printBackground{
+	height: 833.4mm;
+	width: 583.4mm;
+}
+#printInfo{
+	font-size: x-large;
+}
+#printCurrency{
+	font-size: xx-large;
+}	
+#printCurrencyLogo{
+	height: 13.2mm;
+	width: 13.2mm;
+}
+#key{
+	font-size: x-large;
+}
+#coins{
+	font-size: x-large;
+}
+#qr-pub{
+	height: 90mm;
+	width: 90mm;
+}
+/**********************	
+*	Wallet Backside	
+***********************/
+#background-image-print{
+	position: relative;
+	left: 25.1mm;
+	top: -5.3mm;
+	height: 444.5mm;
+	width: 311.2mm;
+}
+#bitcoin-logo-backsite{
+	position: relative;
+	left: 234.7mm;
+	top: -309.6mm;
+}
+#private-key{
+	position: relative;
+	left: 121.7mm;
+	top: -305.6mm;
+	font-size: small;
+}
+#qr-priv{
+	position: relative;
+	left: 75.4mm;
+	top: -315.4mm;
+	height: 42.3mm;
+	width: 42.3mm;
+	
+}
+/*********************/
+
+
+#backgroundImage{
+	height: 400px;
+	width: 280px;
+}
+
+#buttonBacksite{
+	position: relative;
+	left: 20px; 
+	top: 90px;
+}
+
+
+
+
+#currencies{
+	position: relative;
+	top: 80px;
+	left: -75px;
+	border-collapse: separate;
+    border-spacing: 100px 50px;
+	width: 935px;
+}
+
+.currenciesCell{
+	display: table-cell;	
+	height: 115px;
+	width: 255px;	
+}
+
+.currenciesRow{
+	display: table-row;
+	margin-right: 93px;
+	height: 115px;
+	width: 210px;
+}
+
+#smallCurrencies{
+	position: relative;
+	top: 110px;
+	left: 35px;
+}
+
+.smallCurrenciesCell{
+	display: table-cell;
+	height: 40px;
+	width: 80px;
+}
+
+.smallCurrenciesRow{
+	display: table-row;
+	margin-right: 93px;
+	height: 115px;
+	width: 210px;
+}
+
+#mainTextCurrencyDiv{
+	position: relative;
+	top: 80px;
+	left: 20px;
+	width: 730px;
+}
+
+#mainTextCurrency{
+	text-align: justify;
+}
+
+#disclaimer{
+	position: relative;
+	top: 100px;
+	left: 20px;
+	width: 735px;
+	text-align: justify;
+}
+
+.menuePoint{
+	display: inline;
+	margin-right: 92px;
+	text-decoration: none;
+	color: #717070;
+}
+.menuePointSelected{
+	display: inline;
+	margin-right: 92px;	
+	text-decoration: none;
+	color: #ff5046; 
+}
+
+
+.textCurrency{
+	font-size: x-small;
+}
+
+.BTC{
+	background: #ffffff;
+	color: #717070;
+	font-family: 'Verdana';
+	font-weight: bold;
+}
+
+#footer
+{
+    clear: both;
+    background: black;   
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    line-height: normal;
+    margin: 0;
+    position: fixed;
+    bottom: 0px;
+    width: 911px;
+}
+
+.footerDisclaimer
+{
+	display: inline;
+	margin-right: 60px;
+	color: #c6c6c6;
+	text-decoration: none;
+	font-family: 'Verdana';
+	font-weight: bold;
+}

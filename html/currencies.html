@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link href = "../style.css" rel = "stylesheet" type = "text/css" />
+		<title> 
+			moneyart.info
+		</title>
+		<script type = "text/javascript">
+			function over(str)
+			{
+				document.getElementById(str).src = "../images/currencies/" + str + "Color.png"
+			}
+			
+			function out(str)
+			{
+				document.getElementById(str).src = "../images/currencies/" + str + ".png"
+			}
+		</script>
+	</head>
+	<body>
+		<div id = "site">
+			<div id = "logo">
+				<a href = "../index.html" > <img src = "../images/logo.jpg" onMouseOver="this.src= '../images/logo2.jpg'" onMouseOut ="this.src= '../images/logo.jpg'" /> </a>
+			</div>
+			<div id = "menue">
+				<a class = "menuePoint" href = "../index.html" onMouseOver="this.style.color= '#ff5046'" onMouseOut ="this.style.color= '#717070'">INFO</a>
+				<a class = "menuePointSelected" href = "currencies.html">COINS</a>
+				<a class = "menuePoint" href = "design.html" onMouseOver="this.style.color= '#ff5046'" onMouseOut ="this.style.color= '#717070'">DESIGN</a>
+				<a class = "menuePoint" href = "team.html" onMouseOver="this.style.color= '#ff5046'" onMouseOut ="this.style.color= '#717070'">TEAM</a>
+				<a class = "menuePoint" href = "folding.html" onMouseOver="this.style.color= '#ff5046'" onMouseOut =" this.style.color= '#717070'">FOLDING</a>
+			</div>
+			<div id = "mainTextCurrencyDiv">
+				<p id = "mainTextCurrency"> Choose your favorite currency and print a paper wallet. Each one has a unique design. </p>
+			</div>
+			<div id = "currencies">				
+				<div class = "currenciesRow">				
+					<div class = "currenciesCell">						
+						<a href = "design.html">
+							<img id="bitcoin" onMouseOver="over('bitcoin')" onMouseOut="out('bitcoin')" src="../images/currencies/bitcoin.png" />
+						</a>
+						<p class = "textCurrency"> Bitcoin <br> Hash Algorithm: SHA-256 <br> Max. coins: 21,000,000 </p>
+					</div>				
+					<div class = "currenciesCell"> 						
+						<a href = "alternativeCoinDesigns/designNamecoin.html">
+							<img id="namecoin" onMouseOver="over('namecoin')" onMouseOut="out('namecoin')" src="../images/currencies/namecoin.png" />
+						</a>
+						<p class = "textCurrency">  Namecoin <br> Hash Algorithm: SHA-256 <br> Max. coins: 21,000,000 </p>
+					</div>				
+				</div>			
+			</div>	
+			<div id = "smallCurrencies">
+				<div class = "smallCurrenciesRow">	
+					<div class = "smallCurrenciesCell">						
+						<a href = "alternativeCoinDesigns/designDogecoin.html">					
+							<img id="dogecoin" onMouseOver="over('dogecoin')" onMouseOut="out('dogecoin')" src="../images/currencies/dogecoin.png" />						
+						</a>	
+						<p class = "textCurrency"> Dogecoin </p>
+					</div>
+					<div class = "smallCurrenciesCell">
+						<a href = "alternativeCoinDesigns/designLitecoin.html">
+							<img id="litecoin" onMouseOver="over('litecoin')" onMouseOut="out('litecoin')" src="../images/currencies/litecoin.png" />
+						</a>
+						<p class = "textCurrency"> Litecoin </p>
+					</div>
+					<div class = "smallCurrenciesCell"> 
+						<a href = "alternativeCoinDesigns/designCraftcoin.html">	
+							<img id="craftcoin" onMouseOver="over('craftcoin')" onMouseOut="out('craftcoin')" src="../images/currencies/craftcoin.png" />						
+						</a>
+						<p class = "textCurrency"> Craftcoin </p>
+					</div>
+					<div class = "smallCurrenciesCell"> 	
+						<a href = "alternativeCoinDesigns/designFastcoin.html">	
+							<img id="fastcoin" onMouseOver="over('fastcoin')" onMouseOut="out('fastcoin')" src="../images/currencies/fastcoin.png" />						
+						</a>							
+						<p class = "textCurrency"> Fastcoin </p>
+					</div>
+					<div class = "smallCurrenciesCell"> 	
+						<a href = "alternativeCoinDesigns/designGoldcoin.html">	
+							<img id="goldcoin" onMouseOver="over('goldcoin')" onMouseOut="out('goldcoin')" src="../images/currencies/goldcoin.png" />						
+						</a>							
+						<p class = "textCurrency"> Goldcoin </p>
+					</div>
+				</div>
+			</div>			
+				 
+				
+				
+			<!--
+				<div class = "currenciesRow"> 
+										
+					<div class = "currenciesCell"> 	
+						<a href = "alternativeCoinDesigns/designPeercoin.html">	
+							<img id="peercoin" onMouseOver="over('peercoin')" onMouseOut="out('peercoin')" src="../images/currencies/peercoin.png" />						
+						</a>
+						<p class = "textCurrency"> Peercoin <br> Hash Algorithm: SHA-256 <br> Max. coins: 2,100,000,000  </p>
+					</div>
+					
+				</div> 
+				<div class = "currenciesRow"> 
+					<div class = "currenciesCell">
+						<a href = "alternativeCoinDesigns/designPhenixcoin.html">	
+							<img id="phenixcoin" onMouseOver="over('phenixcoin')" onMouseOut="out('phenixcoin')" src="../images/currencies/phenixcoin.png" />						
+						</a>						
+						<p class = "textCurrency"> Phenixcoin <br> Hash Algorithm: SCRYPT <br> Max. coins: 168,000,000  </p>
+					</div>
+					<div class = "currenciesCell"> 	
+						<a href = "alternativeCoinDesigns/designGoldcoin.html">	
+							<img id="goldcoin" onMouseOver="over('goldcoin')" onMouseOut="out('goldcoin')" src="../images/currencies/goldcoin.png" />						
+						</a>
+						<p class = "textCurrency"> Goldcoin <br> Hash Algorithm: SCRYPT <br> Max. coins: 123,423,900   </p>
+					</div>
+					<div class = "currenciesCell"> 	
+						<a href = "alternativeCoinDesigns/designWorldcoin.html">	
+							<img id="worldcoin" onMouseOver="over('worldcoin')" onMouseOut="out('worldcoin')" src="../images/currencies/worldcoin.png" />						
+						</a>					
+						<p class = "textCurrency"> Worldcoin <br> Hash Algorithm: SCRYPT <br> Max. coins: 265,420,800   </p>
+					</div>
+				-->
+				
+			<footer id = "footer">
+				<a class = "footerDisclaimer" href = "about.html"> ABOUT </a>
+				<a class = "footerDisclaimer" href = "disclaimer.html"> DISCLAIMER </a>				
+			</footer>
+		</div>		
+	</body>
+</html>

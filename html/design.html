@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link href = "../style.css" rel = "stylesheet" type = "text/css" />	
+		
+		<script type = "text/javascript" src = "../javascript/jquery-1.11.3.min.js"></script>	
+		<script type = "text/javascript" src = "../javascript/jquery.print.js"></script>	
+		<script type = "text/javascript" src = "../javascript/qr.min.js"></script>
+		<script type = "text/javascript" src = "../javascript/processing-1.4.1.js"></script>			
+		
+		<script type = "text/javascript" src = "../javascript/sjcl.js"></script>		
+		<script type = "text/javascript" src = "../javascript/biginteger.js"></script>
+		<script type = "text/javascript" src = "../javascript/base58.js"></script>		
+		<script type = "text/javascript" src = "../javascript/coinKeyPair/bitcoinKeyPair.js"></script>
+		
+		<script type="text/javascript" src="../javascript/jspdf/zlib.js"></script>
+		<script type="text/javascript" src="../javascript/jspdf/png.js"></script>
+		<script type="text/javascript" src="../javascript/jspdf/jspdf.js"></script>
+		<script type="text/javascript" src="../javascript/jspdf/addimage.js"></script>
+		<script type="text/javascript" src="../javascript/jspdf/png_support.js"></script>
+		<script type="text/javascript" src="../javascript/jspdf/deflate.js"></script>
+		<script type="text/javascript" src="../javascript/jspdf/jspdf.debug.js"></script>
+		<script type="text/javascript" src="../javascript/printPDF/printBitcoinPDF.js"></script>
+				
+		<script type = "text/javascript">
+			$(document).ready(function() 
+			{ 				
+				var entropyFlag = false;
+				var ready;
+				var width = 0;
+				sjcl.random = new sjcl.prng(10);
+				
+				$("#area").on('mouseenter', function() {
+					sjcl.random.startCollectors();
+				});
+				
+				$("#area").on('mouseleave', function() {
+					sjcl.random.stopCollectors();
+				});
+				
+				$("#area").on('mousemove', function() {					
+					ready = sjcl.random.getProgress(10);
+					width = ready * 330;
+					document.getElementById("bar").style.width = width + "px";
+					if(ready == 1 && !entropyFlag)
+						entropyFlag = true;				
+				});
+			
+				$('.print').click(function() 
+				{	
+					if(ready != 1)
+						alert("Please collect entropy before printing.");
+					else
+					{
+					
+						// ********************************************************************
+						// 		Calculation of keys
+						// ********************************************************************
+						
+						var keyPair = generateBitcoinKeyPair(); 															
+						var privkey = keyPair[0];
+						var pubkey = keyPair[1];	
+						
+						// ********************************************************************
+						// 		Print frontside
+						// ********************************************************************		
+							
+						var maxLength = 10;
+						var amountInput = document.getElementById("amountInput").value;
+						var radioButton1 = document.getElementById("radio1").checked;
+						var radioButton2 = document.getElementById("radio2").checked;
+						var amountOutput = '';
+						amountOutput = amountInput;
+						
+						if(amountOutput == "")
+						{
+							amountOutput = '             ';
+						}
+						else
+						{	
+							if(radioButton1)
+							{
+								amountOutput = amountOutput + ' BTC';
+							}
+							else if(radioButton2)
+							{
+								amountOutput = amountOutput + ' mBTC';
+							}
+							else
+							{
+								amountOutput = amountOutput + ' \u00B5BTC';
+							}
+						}
+						for(var i = 0; i < maxLength - amountInput.length; i++)
+						{
+							amountOutput = ' ' + amountOutput ;						
+						}
+						
+						window.sleep(printPDF(privkey, pubkey, "BITCOIN", amountOutput), 5000);
+						
+					}					
+				});	
+			});	
+		</script>
+		<title> 
+			moneyart.info
+		</title>
+	</head>
+	<body>
+		<div id = "site">
+			<div id = "logo">
+				<a href = "../index.html" > <img src = "../images/logo.jpg" onMouseOver="this.src= '../images/logo2.jpg'" onMouseOut ="this.src= '../images/logo.jpg'" /> </a>
+			</div>
+			<div id = "menue">
+				<a class = "menuePoint" href = "../index.html" onMouseOver="this.style.color= '#ff5046'" onMouseOut ="this.style.color= '#717070'">INFO</a>
+				<a class = "menuePoint" href = "currencies.html" onMouseOver="this.style.color= '#ff5046'" onMouseOut ="this.style.color= '#717070'">COINS</a>
+				<a class = "menuePointSelected" href = "design.html" >DESIGN</a>
+				<a class = "menuePoint" href = "team.html" onMouseOver="this.style.color= '#ff5046'" onMouseOut ="this.style.color= '#717070'">TEAM</a>
+				<a class = "menuePoint" href = "folding.html" onMouseOver="this.style.color= '#ff5046'" onMouseOut =" this.style.color= '#717070'">FOLDING</a>
+			</div>
+			<div id = "mainText">
+				<p> Let's print out a beautiful, individual and secure wallet for your currency! </p>
+			</div>
+			<div id = "processing">
+				<canvas id = "designImage" data-processing-sources = "../processing/Logo_1/Logo_1.pde"></canvas>	
+			</div>	
+			<div id = "currencyMeasure">
+				<span></span><input type = "radio" class = "radio" id = "radio1" name = "size" value = "BTC"  checked = "checked"><span></span>BTC<br>
+				<span></span><input type = "radio" id = "radio2" name = "size" value = "milliBTC"><span></span>mBTC<br>
+				<span></span><input type = "radio" id = "radio3" name = "size" value = value = "microBTC"><span></span>&#x00B5;BTC
+			</div>
+			<div id = "input">
+				<input id = "amountInput" type = "value" maxlength = "10">
+			</div>	
+			<div id = "warningMessage">
+				<p>Please collect entropy and go offline.</p>
+			</div>
+			<div id = "area">				
+			</div>			
+			<div id = "progressBar">
+			</div>
+			<div id = "bar">
+			</div>
+			<div id = "printButton">
+				<button class = "print" onMouseOver="this.style.colorBackground = '#ff5046'" onMouseOut ="this.style.colorBackground = '#717070'"> PRINT </button>
+			</div>					
+			<footer id = "footer">
+				<a class = "footerDisclaimer" href = "about.html"> ABOUT </a>
+				<a class = "footerDisclaimer" href = "disclaimer.html"> DISCLAIMER </a>				
+			</footer>
+		</div>		
+	</body>
+</html>
